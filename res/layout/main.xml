@@ -4,9 +4,15 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <Button
+    	android:text="@string/plus"
+    	android:onClick="addFive"/>
 <TextView  
     android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
+    android:layout_height="wrap_content"
+    android:id="@+id/currentValue"
     />
+    <Button
+    	android:text="@string/minus"
+    	android:onClick="subtractFive"/>
 </LinearLayout>
