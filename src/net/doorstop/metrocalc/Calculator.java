@@ -1,5 +1,7 @@
 package net.doorstop.metrocalc;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,13 +9,14 @@ import android.widget.TextView;
 
 public class Calculator extends Activity {
 	
-	private int cents;
+	private int cents = 200;
 	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        refresh();
     }
     
     public void addFive(View view) {
@@ -33,6 +36,8 @@ public class Calculator extends Activity {
 	}
 
 	private String formatCents(int value) {
-		return "$" + value / 100 + "." + value % 100; 
+		String dollars = new DecimalFormat("$0.").format(value / 100);
+		String cents = new DecimalFormat("00").format(value % 100);
+		return dollars + cents;
 	}
 }
