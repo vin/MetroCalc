@@ -19,14 +19,34 @@ public class Calculator extends Activity {
         refresh();
     }
     
-    public void addFive(View view) {
-    	cents += 5;
+    public void addCents(int n) {
+    	cents += n;
+    	cents = Math.max(0, cents);
     	refresh();
     }
     
-    public void subtractFive(View view) {
-    	cents = Math.max(0, cents - 5);
-    	refresh();
+    public void add5(View view) {
+    	addCents(5);
+    }
+    
+    public void add25(View view) {
+    	addCents(25);
+    }
+    
+    public void add100(View view) {
+    	addCents(100);
+    }
+    
+    public void subtract5(View view) {
+    	addCents(-5);
+    }
+
+    public void subtract25(View view) {
+    	addCents(-25);
+    }
+
+    public void subtract100(View view) {
+    	addCents(-100);
     }
 
 	private void refresh() {

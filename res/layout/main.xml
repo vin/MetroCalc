@@ -5,18 +5,38 @@
     android:layout_height="fill_parent"
     >
     <Button
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-    	android:text="@string/plus"
-    	android:onClick="addFive"/>
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:text="@string/plus100"
+        android:onClick="add100"/>
+    <Button
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:text="@string/plus25"
+        android:onClick="add25"/>
+    <Button
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:text="@string/plus5"
+        android:onClick="add5"/>
 <TextView  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content"
     android:id="@+id/currentValue"
     />
     <Button
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-    	android:text="@string/minus"
-    	android:onClick="subtractFive"/>
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:text="@string/minus100"
+        android:onClick="subtract100"/>
+    <Button
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:text="@string/minus25"
+        android:onClick="subtract25"/>
+    <Button
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:text="@string/minus5"
+        android:onClick="subtract5"/>
 </LinearLayout>
