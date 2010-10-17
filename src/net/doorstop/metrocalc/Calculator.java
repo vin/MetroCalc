@@ -50,9 +50,14 @@ public class Calculator extends Activity {
     }
 
 	private void refresh() {
-		TextView currentValue = (TextView) findViewById(R.id.currentValue);
-		currentValue.setText(formatCents(cents));
-		// TODO calculate the amount to add and show it too.
+		setTextViewText(R.id.currentValue, formatCents(cents));
+		// TODO: compute the real suggestion amount.
+		setTextViewText(R.id.suggestion, "suggestion");
+	}
+
+	private void setTextViewText(int textViewId, String value) {
+		TextView view = (TextView) findViewById(textViewId);
+		view.setText(value);
 	}
 
 	private String formatCents(int value) {
