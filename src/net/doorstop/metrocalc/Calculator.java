@@ -54,8 +54,11 @@ public class Calculator extends Activity {
 
     private void refresh() {
         setTextViewText(R.id.currentValue, formatCents(currentCents));
-        setTextViewText(R.id.suggestion,
-                formatCents(computeSuggestion(currentCents)));
+        int suggestion = computeSuggestionWithBonus(currentCents);
+        setTextViewText(R.id.suggestion, formatCents(suggestion));
+        setTextViewText(R.id.bonus, formatCents(Math.round(suggestion * BONUS_MULTIPLIER) - suggestion));
+        int newTotal = currentCents + Math.round(suggestion * BONUS_MULTIPLIER);
+        setTextViewText(R.id.newTotal, formatCents(newTotal));
     }
 
     public static int mod(int dividend, int divisor) {
@@ -68,6 +71,18 @@ public class Calculator extends Activity {
     
     public static int computeSuggestion(int cents) {
         return mod(-cents, RIDE_COST);
+    }
+    
+    public static int computeSuggestionWithBonus(int cents) {
+        if (cents % 5 != 0) {
+            throw new IllegalArgumentException("input must be nonnegative multiple of 5.");
+        }
+        int result = BONUS_THRESHOLD;
+        while (mod(Math.round(result * BONUS_MULTIPLIER), 5) != 0
+                || mod(Math.round(cents + result * BONUS_MULTIPLIER), 225) != 0) {
+            result += 5;
+        }
+        return result;
     }
 
     private void setTextViewText(int textViewId, String value) {
