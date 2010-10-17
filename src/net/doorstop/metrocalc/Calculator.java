@@ -58,8 +58,16 @@ public class Calculator extends Activity {
                 formatCents(computeSuggestion(currentCents)));
     }
 
+    public static int mod(int dividend, int divisor) {
+        int result = dividend % divisor;
+        if (result < 0) {
+            result += divisor;
+        }
+        return result;
+    }
+    
     public static int computeSuggestion(int cents) {
-        return RIDE_COST - cents % RIDE_COST;
+        return mod(-cents, RIDE_COST);
     }
 
     private void setTextViewText(int textViewId, String value) {
