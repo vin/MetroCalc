@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Calculator extends Activity {
-	
-	private static final int RIDE_COST = 225;
-	private static final float BONUS_MULTIPLIER = 1.15f;
-	private static final int BONUS_THRESHOLD = 800;
-	private int currentCents = 200;
-	
+
+    private static final int RIDE_COST = 225;
+    private static final float BONUS_MULTIPLIER = 1.15f;
+    private static final int BONUS_THRESHOLD = 800;
+    private int currentCents = 200;
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,54 +21,55 @@ public class Calculator extends Activity {
         setContentView(R.layout.main);
         refresh();
     }
-    
+
     public void addCents(int n) {
         currentCents += n;
         currentCents = Math.max(0, currentCents);
         refresh();
     }
-    
+
     public void add5(View view) {
-    	addCents(5);
+        addCents(5);
     }
-    
+
     public void add25(View view) {
-    	addCents(25);
+        addCents(25);
     }
-    
+
     public void add100(View view) {
-    	addCents(100);
+        addCents(100);
     }
-    
+
     public void subtract5(View view) {
-    	addCents(-5);
+        addCents(-5);
     }
 
     public void subtract25(View view) {
-    	addCents(-25);
+        addCents(-25);
     }
 
     public void subtract100(View view) {
-    	addCents(-100);
+        addCents(-100);
     }
 
-	private void refresh() {
-		setTextViewText(R.id.currentValue, formatCents(currentCents));
-		setTextViewText(R.id.suggestion, formatCents(computeSuggestion(currentCents)));
-	}
+    private void refresh() {
+        setTextViewText(R.id.currentValue, formatCents(currentCents));
+        setTextViewText(R.id.suggestion,
+                formatCents(computeSuggestion(currentCents)));
+    }
 
-	public static int computeSuggestion(int cents) {
-		return RIDE_COST - cents % RIDE_COST;
-	}
+    public static int computeSuggestion(int cents) {
+        return RIDE_COST - cents % RIDE_COST;
+    }
 
-	private void setTextViewText(int textViewId, String value) {
-		TextView view = (TextView) findViewById(textViewId);
-		view.setText(value);
-	}
+    private void setTextViewText(int textViewId, String value) {
+        TextView view = (TextView) findViewById(textViewId);
+        view.setText(value);
+    }
 
-	private String formatCents(int value) {
-		String dollars = new DecimalFormat("$0.").format(value / 100);
-		String cents = new DecimalFormat("00").format(value % 100);
-		return dollars + cents;
-	}
+    private String formatCents(int value) {
+        String dollars = new DecimalFormat("$0.").format(value / 100);
+        String cents = new DecimalFormat("00").format(value % 100);
+        return dollars + cents;
+    }
 }
