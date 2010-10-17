@@ -9,7 +9,10 @@ import android.widget.TextView;
 
 public class Calculator extends Activity {
 	
-	private int cents = 200;
+	private static final int RIDE_COST = 225;
+	private static final float BONUS_MULTIPLIER = 1.15f;
+	private static final int BONUS_THRESHOLD = 800;
+	private int currentCents = 200;
 	
     /** Called when the activity is first created. */
     @Override
@@ -20,9 +23,9 @@ public class Calculator extends Activity {
     }
     
     public void addCents(int n) {
-    	cents += n;
-    	cents = Math.max(0, cents);
-    	refresh();
+        currentCents += n;
+        currentCents = Math.max(0, currentCents);
+        refresh();
     }
     
     public void add5(View view) {
@@ -50,9 +53,12 @@ public class Calculator extends Activity {
     }
 
 	private void refresh() {
-		setTextViewText(R.id.currentValue, formatCents(cents));
-		// TODO: compute the real suggestion amount.
-		setTextViewText(R.id.suggestion, "suggestion");
+		setTextViewText(R.id.currentValue, formatCents(currentCents));
+		setTextViewText(R.id.suggestion, formatCents(computeSuggestion(currentCents)));
+	}
+
+	public static int computeSuggestion(int cents) {
+		return RIDE_COST - cents % RIDE_COST;
 	}
 
 	private void setTextViewText(int textViewId, String value) {
