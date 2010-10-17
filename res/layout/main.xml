@@ -33,6 +33,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/currentValue"
+        android:textSize="20sp"
         />
     <LinearLayout
       android:orientation="horizontal"
@@ -63,6 +64,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/suggestion"
+        android:textSize="20sp"
         />
     <TextView
         android:layout_width="fill_parent"
