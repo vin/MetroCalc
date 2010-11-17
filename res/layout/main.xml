@@ -12,17 +12,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/plus100"
-            android:onClick="add100"/>
+            android:onClick="addCents"
+            android:tag="100"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/plus25"
-            android:onClick="add25"/>
+            android:onClick="addCents"
+            android:tag="25"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/plus5"
-            android:onClick="add5"/>
+            android:onClick="addCents"
+            android:tag="5"/>
     </LinearLayout>
     <TextView
         android:layout_width="fill_parent"
@@ -43,17 +46,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/minus100"
-            android:onClick="subtract100"/>
+            android:onClick="addCents"
+            android:tag="-100"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/minus25"
-            android:onClick="subtract25"/>
+            android:onClick="addCents"
+            android:tag="-25"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/minus5"
-            android:onClick="subtract5"/>
+            android:onClick="addCents"
+            android:tag="-5"/>
     </LinearLayout>
     <TextView
         android:layout_width="fill_parent"

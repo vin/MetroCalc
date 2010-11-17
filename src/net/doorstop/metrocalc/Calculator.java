@@ -20,9 +20,7 @@ public class Calculator extends Activity {
         1205, 1005, 805, 800, 1970,
         1770, 1570};
 
-    private static final int RIDE_COST = 225;
     private static final int BONUS_MULTIPLIER = 15;
-    private static final int BONUS_THRESHOLD = 800;
     private int currentCents = 200;
 
     /** Called when the activity is first created. */
@@ -33,34 +31,14 @@ public class Calculator extends Activity {
         refresh();
     }
 
+    public void addCents(View v) {
+    	addCents(Integer.valueOf((String)v.getTag()));
+    }
+    
     public void addCents(int n) {
         currentCents += n;
         currentCents = Math.max(0, currentCents);
         refresh();
-    }
-
-    public void add5(View view) {
-        addCents(5);
-    }
-
-    public void add25(View view) {
-        addCents(25);
-    }
-
-    public void add100(View view) {
-        addCents(100);
-    }
-
-    public void subtract5(View view) {
-        addCents(-5);
-    }
-
-    public void subtract25(View view) {
-        addCents(-25);
-    }
-
-    public void subtract100(View view) {
-        addCents(-100);
     }
 
     private void refresh() {
