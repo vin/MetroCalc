@@ -9,8 +9,19 @@ import android.widget.TextView;
 
 public class Calculator extends Activity {
 
+    private static int TABLE[] = {
+        1370, 1170, 970, 2335, 2135, 1935,
+        1735, 1535, 1335, 1135, 935, 2105,
+        1905, 1705, 1505, 1305, 1105, 905,
+        900, 2070, 1870, 1670, 1470,
+        1270, 1070, 870, 2235, 2035,
+        1835, 1635, 1435, 1235, 1035,
+        835, 2005, 1805, 1605, 1405,
+        1205, 1005, 805, 800, 1970,
+        1770, 1570};
+
     private static final int RIDE_COST = 225;
-    private static final float BONUS_MULTIPLIER = 1.15f;
+    private static final int BONUS_MULTIPLIER = 15;
     private static final int BONUS_THRESHOLD = 800;
     private int currentCents = 200;
 
@@ -56,33 +67,18 @@ public class Calculator extends Activity {
         setTextViewText(R.id.currentValue, formatCents(currentCents));
         int suggestion = computeSuggestionWithBonus(currentCents);
         setTextViewText(R.id.suggestion, formatCents(suggestion));
-        setTextViewText(R.id.bonus, formatCents(Math.round(suggestion * BONUS_MULTIPLIER) - suggestion));
-        int newTotal = currentCents + Math.round(suggestion * BONUS_MULTIPLIER);
+        int bonus = suggestion * BONUS_MULTIPLIER / 100;
+        setTextViewText(R.id.bonus, formatCents(bonus));
+        int newTotal = currentCents + suggestion + bonus;
         setTextViewText(R.id.newTotal, formatCents(newTotal));
     }
 
-    public static int mod(int dividend, int divisor) {
-        int result = dividend % divisor;
-        if (result < 0) {
-            result += divisor;
-        }
-        return result;
-    }
-    
-    public static int computeSuggestion(int cents) {
-        return mod(-cents, RIDE_COST);
-    }
-    
     public static int computeSuggestionWithBonus(int cents) {
         if (cents % 5 != 0) {
             throw new IllegalArgumentException("input must be nonnegative multiple of 5.");
         }
-        int result = BONUS_THRESHOLD;
-        while (mod(Math.round(result * BONUS_MULTIPLIER), 5) != 0
-                || mod(Math.round(cents + result * BONUS_MULTIPLIER), 225) != 0) {
-            result += 5;
-        }
-        return result;
+        int i = cents % 225 / 5;
+        return TABLE[i];
     }
 
     private void setTextViewText(int textViewId, String value) {
