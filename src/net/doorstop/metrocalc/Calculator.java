@@ -32,9 +32,9 @@ public class Calculator extends Activity {
     }
 
     public void addCents(View v) {
-    	addCents(Integer.valueOf((String)v.getTag()));
+        addCents(Integer.valueOf((String)v.getTag()));
     }
-    
+
     public void addCents(int n) {
         currentCents += n;
         currentCents = Math.max(0, currentCents);
