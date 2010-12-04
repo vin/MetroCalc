@@ -10,8 +10,8 @@
 <string name="minus100">-$1.00</string>
 <string name="currentValueLabel">Current Value</string>
 <string name="add">Add</string>
-<string name="newTotal">For a new total of</string>
+<string name="newTotal">new total</string>
 
-<string name="bonus">Which gives you a %15 bonus of</string>
+<string name="bonus">15% bonus</string>
 
 </resources>
