@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 public class Calculator extends Activity {
 
-    private static int TABLE[] = { 1565, 1365, 1165, 965, 2135, 1935, 1735,
-            1535, 1335, 1135, 935, 930, 2100, 1900, 1700, 1500, 1300, 1100,
-            900, 2265, 2065, 1865, 1665, 1465, 1265, 1065, 865, 2035, 1835,
-            1635, 1435, 1235, 1035, 835, 830, 2000, 1800, 1600, 1400, 1200,
-            1000, 800, 2165, 1965, 1765 };
+    private static int TABLE[] = { 3575, 3360, 2935, 2720, 2505, 2290, 2075,
+            1860, 1435, 1220, 1005, 1000, 4360, 3935, 3720, 3505, 3290, 3075,
+            2860, 2435, 2220, 2005, 1790, 1575, 1360, 1145, 1140, 4290, 4075,
+            3860, 3435, 3220, 3005, 2790, 2575, 2360, 1935, 1720, 1505, 1290,
+            1075, 1070, 1065, 4005, 3790 };
 
-    private static final int BONUS_MULTIPLIER = 15;
-    private static final int BONUS_THRESHOLD = 800;
+    private static final int BONUS_MULTIPLIER = 7;
+    private static final int BONUS_THRESHOLD = 1000;
     private int currentCents = 200;
 
     /** Called when the activity is first created. */
