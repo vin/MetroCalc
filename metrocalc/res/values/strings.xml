@@ -15,9 +15,9 @@
 
 <string name="bonus">7% bonus</string>
 
-<string name="preferences">Preferences</string>
+<string name="preferences">MetroCalc Preferences</string>
 <string name="settings">Settings</string>
-<string name="about">About</string>
+<string name="about">About MetroCalc</string>
 <string-array name="wasteThresholdEntries"><item>$0.00</item>
 <item>$0.05</item>
 <item>$0.10</item>
@@ -32,4 +32,5 @@
 </string-array>
 <string name="waste">leftover change</string>
 <string name="rides">rides</string>
+<string name="aboutContent">MetroCalc</string>
 </resources>

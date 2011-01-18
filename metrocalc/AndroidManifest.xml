@@ -12,6 +12,7 @@
         </activity>
 
     <activity android:name=".Preferences" android:label="@string/preferences"></activity>
+<activity android:name=".About" android:label="@string/about"></activity>
 </application>
 
 
