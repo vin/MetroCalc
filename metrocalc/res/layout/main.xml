@@ -101,6 +101,30 @@
 		        android:id="@+id/newTotal"
 		        android:layout_gravity="right"
 		        />
-        </TableRow>
-    </TableLayout>
+		</TableRow>
+        <TableRow>
+		    <TextView
+		        android:text="@string/rides"
+		        android:layout_gravity="right"
+		        />
+		    <TextView
+		        android:id="@+id/rides"
+		        android:layout_gravity="right"
+		        />
+		</TableRow>
+        <TableRow>
+		    <TextView
+		        android:text="@string/waste"
+		        android:layout_gravity="right"
+		        />
+		    <TextView
+		        android:id="@+id/waste"
+		        android:layout_gravity="right"
+		        />
+        
+</TableRow>
+    
+
+</TableLayout>
+
 </LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+<ListPreference android:defaultValue="0" android:entryValues="@array/wasteThresholdEntryValues" android:entries="@array/wasteThresholdEntries" android:key="wasteThreshold" android:summary="Maximum leftover change to allow" android:title="Max Waste"></ListPreference>
+</PreferenceScreen>

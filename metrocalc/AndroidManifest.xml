@@ -11,7 +11,8 @@
             </intent-filter>
         </activity>
 
-    </application>
+    <activity android:name=".Preferences" android:label="@string/preferences"></activity>
+</application>
 
 
 <uses-sdk android:minSdkVersion="4"></uses-sdk>
