@@ -55,4 +55,21 @@ public class CalculatorTest extends
 			calculator.addCents(5);
 		}
 	}
+	
+    @UiThreadTest
+    public void testComputeBonusBelowThreshold() {
+        assertEquals(0, Calculator.computeBonus(5));
+        assertEquals(0, Calculator.computeBonus(995));
+    }
+    
+    @UiThreadTest
+    public void testComputeBonusAboveThreshold() {
+        assertEquals(70, Calculator.computeBonus(1000));
+        assertEquals(250, Calculator.computeBonus(3575));
+    }
+    
+	@UiThreadTest
+	public void testComputeSuggestion() {
+	    assertEquals(3360, Calculator.computeSuggestion(5, 0));
+	}
 }
