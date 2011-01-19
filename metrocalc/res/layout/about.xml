@@ -2,6 +2,9 @@
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
-<TextView android:text="@string/aboutContent" android:id="@+id/about" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+  android:layout_height="fill_parent" android:orientation="vertical">
+<TextView android:text="@string/app_name" android:id="@+id/aboutName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"></TextView>
+<TextView android:text="@string/app_version" android:id="@+id/aboutVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"></TextView>
+<TextView android:text="@string/aboutContent" android:id="@+id/aboutContact" android:lineSpacingMultiplier="2"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center"></TextView>
+
 </LinearLayout>
