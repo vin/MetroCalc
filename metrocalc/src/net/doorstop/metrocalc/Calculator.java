@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class Calculator extends Activity {
+public class Calculator extends Activity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final int FARE = 225;
     private static final int BONUS_MULTIPLIER = 7;
@@ -28,9 +28,15 @@ public class Calculator extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences.registerOnSharedPreferenceChangeListener(this);
         refresh();
     }
-    
+
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+            String key) {
+        refresh();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
