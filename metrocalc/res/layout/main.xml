@@ -26,6 +26,12 @@
             android:text="@string/plus5"
             android:onClick="addCents"
             android:tag="5"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus1"
+            android:onClick="addCents"
+            android:tag="1"/>
     </LinearLayout>
     <TextView
         android:layout_width="fill_parent"
@@ -61,8 +67,14 @@
             android:text="@string/minus5"
             android:onClick="addCents"
             android:tag="-5"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minus1"
+            android:onClick="addCents"
+            android:tag="-1"/>
     </LinearLayout>
-	<TableLayout
+    <TableLayout
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:shrinkColumns="3"
@@ -70,61 +82,57 @@
       android:paddingTop="8sp"
       >
         <TableRow>
-		    <TextView
-		        android:text="@string/add"
-		        android:layout_gravity="right|bottom"
-		        />
-		    <TextView
-		        android:id="@+id/suggestion"
-		        android:textSize="24sp"
-		        android:textStyle="bold"
-		        android:layout_gravity="right|bottom"
-				android:paddingLeft="6sp"
-		        />
+            <TextView
+                android:text="@string/add"
+                android:layout_gravity="right|bottom"
+                />
+            <TextView
+                android:id="@+id/suggestion"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="right|bottom"
+                android:paddingLeft="6sp"
+                />
         </TableRow>
         <TableRow>
-		    <TextView
-		        android:text="@string/bonus"
-		        android:layout_gravity="right"
-		        />
-		    <TextView
-		        android:id="@+id/bonus"
-		        android:layout_gravity="right"
-		        />
-		</TableRow>
+            <TextView
+                android:text="@string/bonus"
+                android:layout_gravity="right"
+                />
+            <TextView
+                android:id="@+id/bonus"
+                android:layout_gravity="right"
+                />
+        </TableRow>
         <TableRow>
-		    <TextView
-		        android:text="@string/newTotal"
-		        android:layout_gravity="right"
-		        />
-		    <TextView
-		        android:id="@+id/newTotal"
-		        android:layout_gravity="right"
-		        />
-		</TableRow>
+            <TextView
+                android:text="@string/newTotal"
+                android:layout_gravity="right"
+                />
+            <TextView
+                android:id="@+id/newTotal"
+                android:layout_gravity="right"
+                />
+        </TableRow>
         <TableRow>
-		    <TextView
-		        android:text="@string/rides"
-		        android:layout_gravity="right"
-		        />
-		    <TextView
-		        android:id="@+id/rides"
-		        android:layout_gravity="right"
-		        />
-		</TableRow>
+            <TextView
+                android:text="@string/rides"
+                android:layout_gravity="right"
+                />
+            <TextView
+                android:id="@+id/rides"
+                android:layout_gravity="right"
+                />
+        </TableRow>
         <TableRow>
-		    <TextView
-		        android:text="@string/waste"
-		        android:layout_gravity="right"
-		        />
-		    <TextView
-		        android:id="@+id/waste"
-		        android:layout_gravity="right"
-		        />
-        
-</TableRow>
-    
-
-</TableLayout>
-
+            <TextView
+                android:text="@string/waste"
+                android:layout_gravity="right"
+                />
+            <TextView
+                android:id="@+id/waste"
+                android:layout_gravity="right"
+                />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

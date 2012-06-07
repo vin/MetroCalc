@@ -86,7 +86,7 @@ public class Calculator extends Activity {
 
     public static int computeSuggestion(int cents, int wasteThreshold) {
         int result = BONUS_THRESHOLD;
-        while (computeBonus(result) % 5 > 0 || (cents + result + computeBonus(result)) % FARE > wasteThreshold) {
+        while ((cents + result + computeBonus(result)) % FARE > wasteThreshold) {
             result += 5;
         }
         return result;

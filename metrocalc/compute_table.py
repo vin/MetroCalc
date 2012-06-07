@@ -7,9 +7,9 @@ def bonus(cents):
 
 def compute_suggestion(cents, threshold=0):
   result = 1000
-  while bonus(result) % 5 or (cents + bonus(result)) % 225 > threshold:
+  while (cents + bonus(result)) % 225 > threshold:
     result += 5
   return result
 
 if __name__ == '__main__':
-  print [compute_suggestion(i, int(sys.argv[1])) for i in range(0, 225, 5)]
+   print [compute_suggestion(i, int(sys.argv[1])) for i in range(0, 225)]
